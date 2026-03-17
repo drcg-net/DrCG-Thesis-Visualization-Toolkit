@@ -1,0 +1,11 @@
+preset_id,preset_name,lot_width,lot_depth,site_area,building_area,coverage_percent,wall_count,room_count,avg_room_area,daylight_ratio,wall_efficiency,energy_score
+P1,Studio_Urban,6,12,72,32,44.4,12,2,16.0,0.75,0.82,8.5
+P2,OneBedroom_Garden,8,15,120,55,45.8,18,4,13.75,0.68,0.79,7.8
+P3,TwoBedroom_Classic,10,20,200,85,42.5,24,6,14.17,0.72,0.81,8.2
+P4,Studio_Compact,5,10,50,20,40.0,10,1,20.0,0.65,0.75,7.2
+P5,OneBedroom_Modern,8,16,128,60,46.9,20,4,15.0,0.70,0.80,8.1
+P6,TwoBedroom_Spacious,12,22,264,110,41.7,28,6,18.33,0.68,0.78,7.9
+P7,Studio_Luxury,7,14,98,45,45.9,14,2,22.5,0.80,0.85,8.8
+P8,OneBedroom_Eco,9,18,162,70,43.2,22,4,17.5,0.73,0.82,8.4
+P9,TwoBedroom_Traditional,11,21,231,95,41.1,26,6,15.83,0.69,0.79,7.7
+P10,Penthouse_Corner,13,25,325,130,40.0,32,6,21.67,0.75,0.83,8.6
