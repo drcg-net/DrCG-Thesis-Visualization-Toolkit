@@ -121,32 +121,19 @@ This installs:
 python -c "import streamlit; import plotly; import pandas; print('✅ All dependencies installed!')"
 ```
 
-## 🚀 Deploying (GitHub + Streamlit)
+## 🚀 Deployment Guide
 
-To make this tool available to others, publish the repository on GitHub and then deploy it using **Streamlit Community Cloud**.
+For detailed deployment instructions (Streamlit Cloud, Docker, Heroku, AWS, etc.), see **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
 
-### 1) Push to GitHub
-1. Create a new GitHub repo (public or private)
-2. Add all files and commit:
-   ```powershell
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<repo>.git
-git push -u origin main
-```
+### Quick Start: Deploy to Streamlit Cloud
 
-### 2) Deploy on Streamlit Cloud
-1. Go to https://share.streamlit.io
-2. Log in and connect your GitHub account
-3. Select your repository and choose the branch `main`
-4. Set the **main file** to `app.py`
+1. Push your code to GitHub
+2. Visit [streamlit.io/cloud](https://streamlit.io/cloud)
+3. Select repository: `drcg-net/DrCG-Thesis-Visualization-Toolkit`
+4. Set main file: `app.py`
 5. Click **Deploy**
 
-✅ Your app will be live at `https://<your-username>.streamlit.app` (or similar).
-
-> Note: If you use Graphviz-dependent charts (flow diagrams, network graphs), make sure the deployment environment can install Graphviz (Streamlit Cloud supports this via the `packages.txt` file).
+Your app will be live in minutes! 🎉
 
 ## 🧑‍💻 Credits
 

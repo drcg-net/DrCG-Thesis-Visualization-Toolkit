@@ -40,6 +40,15 @@ st.set_page_config(
 
 st.markdown("""
     <style>
+        /* Hide deploy button in header */
+        button[data-testid="stToolbarButton"] { display: none !important; }
+        [data-testid="stToolbarButton"] { display: none !important; }
+        .st-emotion-cache-z5fcl4 { display: none !important; }
+        
+        /* Hide all action buttons in toolbar */
+        [data-testid="stAppToolbar"] button:first-child { display: none !important; }
+        
+        /* Styling */
         .thesis-header { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
         .chart-container { border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; }
     </style>
@@ -49,19 +58,28 @@ st.markdown("""
 # SIDEBAR NAVIGATION
 # ============================================================================
 
-st.sidebar.title("📊 Thesis Viz Toolkit")
+st.sidebar.markdown("""
+<div style='display: flex; align-items: center; gap: 10px; margin-bottom: 20px;'>
+    <span style='font-size: 40px;'>📊</span>
+    <div>
+        <h2 style='margin: 0; font-size: 20px;'>Thesis Viz Toolkit</h2>
+        <small style='color: #888;'>Publication-Ready Charts</small>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 page = st.sidebar.radio(
-    "Select Tool",
+    "📋 Select Tool",
     [
-        "Home",
-        "Data Uploader",
-        "Chart Builder",
+        "🏠 Home",
+        "📥 Data Uploader",
+        "🎨 Chart Builder",
         "🚀 Quick Analysis",
         "📊 Multi-Sheet Analysis",
-        "Bibliometric Analysis",
-        "Graph & Diagrams",
-        "Batch Generator",
-        "Examples & Presets",
+        "📚 Bibliometric Analysis",
+        "🔗 Graph & Diagrams",
+        "🔄 Batch Generator",
+        "✨ Examples & Presets",
     ],
 )
 
@@ -88,7 +106,7 @@ if "generate_all_category" not in st.session_state:
 # HOME PAGE
 # ============================================================================
 
-if page == "Home":
+if page == "Home" or page == "🏠 Home":
     st.markdown("<h1 style='color: #1f77b4;'>📊 DrCG Thesis Visualization Toolkit</h1>", unsafe_allow_html=True)
     
     st.markdown("""
@@ -130,7 +148,7 @@ if page == "Home":
 # DATA UPLOADER
 # ============================================================================
 
-elif page == "Data Uploader":
+elif page == "Data Uploader" or page == "📥 Data Uploader":
     st.header("📥 Data Uploader")
     
     # Upload section
@@ -232,7 +250,7 @@ elif page == "Data Uploader":
 # CHART BUILDER
 # ============================================================================
 
-elif page == "Chart Builder":
+elif page == "Chart Builder" or page == "🎨 Chart Builder":
     st.header("📈 Chart Builder")
     
     if st.session_state.df is None:
@@ -885,7 +903,7 @@ elif page == "📊 Multi-Sheet Analysis":
 # BIBLIOMETRIC ANALYSIS
 # ============================================================================
 
-elif page == "Bibliometric Analysis":
+elif page == "Bibliometric Analysis" or page == "📚 Bibliometric Analysis":
     st.header("📚 Bibliometric Analysis")
     
     if st.session_state.df is None:
@@ -1022,7 +1040,7 @@ elif page == "Bibliometric Analysis":
 # GRAPH & DIAGRAMS
 # ============================================================================
 
-elif page == "Graph & Diagrams":
+elif page == "Graph & Diagrams" or page == "🔗 Graph & Diagrams":
     st.header("🔗 Graph & Diagrams")
     
     if st.session_state.df is None:
@@ -1124,7 +1142,7 @@ elif page == "Graph & Diagrams":
 # BATCH GENERATOR
 # ============================================================================
 
-elif page == "Batch Generator":
+elif page == "Batch Generator" or page == "🔄 Batch Generator":
     st.header("🔄 Batch Chart Generator")
     
     if st.session_state.df is None:
@@ -1194,7 +1212,7 @@ elif page == "Batch Generator":
 # EXAMPLES & PRESETS
 # ============================================================================
 
-elif page == "Examples & Presets":
+elif page == "Examples & Presets" or page == "✨ Examples & Presets":
     st.header("📚 Examples & Presets")
     
     st.write("Click the button below to generate all sample examples automatically.")
@@ -1293,16 +1311,31 @@ elif page == "Examples & Presets":
 
 st.divider()
 
-col1, col2, col3 = st.columns(3)
+footer_col1, footer_col2, footer_col3 = st.columns(3)
 
-with col1:
+with footer_col1:
     st.markdown("**📊 Thesis Viz Toolkit**")
     st.markdown("Publication-ready visualizations")
+    st.markdown("""<small>v1.0 - 2026</small>""", unsafe_allow_html=True)
 
-with col2:
+with footer_col2:
     st.markdown("**📁 Output Location**")
-    st.markdown("`output/` directory in project folder")
+    st.markdown("`output/` directory")
+    st.markdown("**Formats:** PNG • SVG • PDF • HTML")
 
-with col3:
-    st.markdown("**💾 Supported Formats**")
-    st.markdown("PNG • SVG • PDF • HTML")
+with footer_col3:
+    st.markdown("**👨‍💻 Developer**")
+    st.markdown("Mohammad Amanzadegan")
+    st.markdown("[DrCG.Net](https://drcg.net)")
+
+st.markdown("---")
+st.markdown(
+    "<div style='text-align: center; color: #888; font-size: 12px;'>"
+    "<p><strong>DrCG</strong> Built with ❤️ for thesis visualization | "
+    "<a href='https://github.com/drcg-net/DrCG-Thesis-Visualization-Toolkit' target='_blank'>GitHub</a> | "
+    "<a href='https://streamlit.io' target='_blank'>Streamlit</a> | "
+    "<a href='https://www.Amanzadegan.com' target='_blank'>Amanzadegan</a> | "
+    "<a href='https://drcg.net' target='_blank'>DrCG.Net</a></p>"
+    "</div>",
+    unsafe_allow_html=True
+)
